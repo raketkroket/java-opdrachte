@@ -6,12 +6,18 @@
     <title>inloggen</title>
 </head>
 <body>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css"> 
+
     <h1>inloggen</h1> <!--grote tekst inlog pagina-->
     <label>user:</label> <!-- label (een vakj waar je alles in typt)-->
     <input type="text" id="user"><br><br> <!--br betekent break dus er komt een nieuwe regel-->
     <label>password:</label>
     <input type="password" id="password"><br><br>
-    <button onclick="checkLogin()">login</button>
+       <button onclick="checkLogin()">login</button>
+
+ 
+
 
     <script>
         function checkLogin() {
@@ -19,7 +25,7 @@
             var password = document.getElementById("password").value;
 
             if (user === "chass" && password === "1234") { //als user chas is en password juist is krijg je een alert dat het goed is
-                alert("welkom, " + user + "!");
+                alert("welkom, " + user);
             } else { //zo niet fout
                 alert("is niet goed bro.");
             }
