@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- vertelt dat het engels so-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokspel</title>
+</head>
+<body>
+
+    <h1>Raad het getal!</h1> <!--text/titel-->
+    <p>Raad een getal tussen 0 en 10:</p> 
+
+    <input id="nummergekozegok" type="number"> <!--vakje waarje het getal kunt opnoemen/typen inputveld-->
+    <button onclick="checkGuess()">Gok!</button>
+
+    <p id="tekst"></p>
+
+    <script>
+        var randomnummr = Math.floor(Math.random() * 11); //  getal tussen 0 en 10 maar math floor maakt het een heel getal
+
+        function checkGuess() {
+            var nummergekozegok = document.getElementById("nummergekozegok").value; //zoekt in document de id
+            var tekst = document.getElementById("tekst");
+
+            if (!nummergekozegok) { // als je iets in toets 
+                tekst.textContent = "Voer een getal in!"; //gewoon tekst als je iets goeds invoert of fout
+            } else if (nummergekozegok < 0 || nummergekozegok > 10) { // als het getal groter dan 10 is zegt ie dit
+                tekst.textContent = "Getal moet tussen 0 en 10 zijn!";
+            } else if (nummergekozegok == randomnummr) { // als t goed s zegt ie gefeliciteerd etc
+                tekst.textContent = "Gefeliciteerd, goed geraden!";
+            } else { // als t ni goed s
+                tekst.textContent = nummergekozegok < randomnummr ? "Te laag!" : "Te hoog!"; //als het te klein is of te hoog zegt ie dit
+            }
+        }
+    </script>
+
+</body>
+</html>
